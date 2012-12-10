@@ -1,26 +1,55 @@
-body
-{
-    font: Arial, sans-serif;
+@charset "utf-8";
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, em, img, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, 
+legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+:focus { outline: 0; }
+
+button::-moz-focus-inner { padding: 0; border: 0; }
+
+a { outline: none; text-decoration: none; }
+
+p { margin: 0.5em 0 }
+
+textarea { overflow: auto; }
+
+label { cursor: pointer; }
+
+.clear { clear: both; display: block; }
+
+.hidden { visibility: hidden; display: none; }
+
+.right { float: right; }
+
+.left { float: left; }
+
+html, body { 
+	height: 100%; 
+	text-align: center;
+    line-height: 18px;
+	font: normal 12px/1.5 arbor-sans-serif, 'helvetica neue', arial, sans-serif
+}
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	position:relative;
+    background-color : #000;
+    color: #fff; 
 }
 
-.buttonArea,
-.footerText,
-#geoLocationContainer,
-#helloWorldInput,
-#helloWorldText
-{
-    text-align: center;
+#pointer {
+    font-size: 30px;
 }
 
-#txtName
-{
-    border: 1px solid #AAA;
-    border-radius: 15px;
-    position:static;
-    margin-left: 1em;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
-    background:white;
-    color: black;
-    padding: 7px;
+#pointer, #left_up_button, #up_button, #right_up_button, #left_button, #center_button, #right_button, #left_down_button, #down_button, #right_down_button {
+    position: absolute;
+    float: left;
+    display: block;
+    z-index: 100;
+    left: 0;
+    top: 0;
 }
