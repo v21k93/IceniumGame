@@ -19,15 +19,15 @@
         <div data-role="view" data-title="BomberMan" class="wrapper">
             <div id="loader"></div>
             <div id="pointer">0</div>
-            <div id="left_up_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.left_up"></div>
-            <div id="up_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.up"></div>
-            <div id="right_up_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.right_up"></div>
-            <div id="left_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.left"></div>
-            <div id="center_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.center"></div>
-            <div id="right_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.right"></div>
-            <div id="left_down_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.left_down"></div>
-            <div id="down_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.down"></div>
-            <div id="right_down_button" data-role="touch" data-enable-swipe="0" data-touchstart="window_touch.right_down"></div>
+            <div id="left_up_button" data-role="touch" data-touchstart="window_touch.left_up"></div>
+            <div id="up_button" data-role="touch" data-touchstart="window_touch.up" data-tap="window_touch.up_end" data-hold="window_touch.up_holded"></div>
+            <div id="right_up_button" data-role="touch" data-touchstart="window_touch.right_up"></div>
+            <div id="left_button" data-role="touch" data-touchstart="window_touch.left"></div>
+            <div id="center_button" data-role="touch" data-touchstart="window_touch.center"></div>
+            <div id="right_button" data-role="touch" data-touchstart="window_touch.right"></div>
+            <div id="left_down_button" data-role="touch" data-touchstart="window_touch.left_down"></div>
+            <div id="down_button" data-role="touch" data-touchstart="window_touch.down" data-tap="window_touch.down_end" data-hold="window_touch.down_holded"></div>
+            <div id="right_down_button" data-role="touch" data-touchstart="window_touch.right_down"></div>
         </div>
         <script>
             window.kendoMobileApplication = new kendo.mobile.Application(document.body);

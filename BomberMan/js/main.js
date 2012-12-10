@@ -12,15 +12,34 @@ function Main() {
 $(window).resize(function() {
     Size.initialize();
 }); 
+
 window.window_touch = {
-    move_up: false,
-    up: function(e) { Move(Zero, {'up': one_move}); },
-    down: function(e) { Move(Zero, {'down': one_move}); },
+    moving: '',
+    up: function(e) { Move(Zero, {'up': one_move}); window_touch.moving = 'up'; },
+    up_holded: function(e) { 
+        var refreshIntervalId = setInterval(function(){
+            if(window_touch.moving == 'up')
+                Move(Zero, {'up': one_move});
+            else
+                clearInterval(refreshIntervalId);
+        }, 50); },
+    up_end: function(e) { window_touch.moving = ''; },
+    down: function(e) { Move(Zero, {'down': one_move}); window_touch.moving = 'down'; },
+    down_holded: function(e) {         
+        var refreshIntervalId = setInterval(function(){
+            if(window_touch.moving == 'down')
+                Move(Zero, {'down': one_move});
+            else
+                clearInterval(refreshIntervalId);
+        }, 50); },
+    down_end: function(e) { window_touch.moving = ''; },
     left: function(e) { Move(Zero, {'left': one_move}); },
     right: function(e) { Move(Zero, {'right': one_move}); },
     right_up: function(e) { Move(Zero, {'up': one_move, 'right': one_move}); },
     right_down: function(e) { Move(Zero, {'down': one_move, 'right': one_move}); },
     left_up: function(e) { Move(Zero, {'up': one_move, 'left': one_move}); },
     left_down: function(e) { Move(Zero, {'down': one_move, 'left': one_move}); },
-    center: function(e) { Zero.object.text(++parseInt(Zero.object.text()) + 1); }
+    center: function(e) { Zero.object.text(parseInt(Zero.object.text()) + 1); }
 }
+
+addEventListener ('touchend', function (event) { window_touch.moving = ''; }, false);
